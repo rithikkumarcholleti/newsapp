@@ -1,34 +1,87 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import mainlogo from './mainlogo.png'; 
 
 const NavBar = () => {
+    const navStyle = {
+        backgroundColor: '#FF0000', 
+    };
+
+    const linkStyle = {
+        color: 'white',
+        transition: 'color 0.3s', 
+    };
+
+    const linkHoverStyle = {
+        color: 'grey',
+    };
 
     return (
-      <div>
-        <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-light fixed-top" style={navStyle}>
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">NewsPanda</Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <Link className="navbar-brand d-flex align-items-center" to="/" style={linkStyle}>
+                    <img
+                        src={mainlogo}
+                        alt="main logo"
+                        style={{ width: '40px', height: '40px', marginRight: '10px' }}
+                    />
+                    NewsPanda
+                </Link>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link className="nav-link" aria-current="page" to="/">Home</Link>
-                        </li>
-                        <li className="nav-item"><Link className="nav-link" to="/business">Business</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/entertainment">Entertainment</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/general">General</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/health">Health</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/science">Science</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
-                        <li className="nav-item"><Link className="nav-link" to="/technology">Technology</Link></li>
+                    <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
+                        {['/', '/business', '/entertainment', '/general', '/health', '/science', '/sports', '/technology'].map((path) => (
+                            <li className="nav-item" key={path}>
+                                <Link
+                                    className="nav-link"
+                                    to={path}
+                                    style={linkStyle}
+                                    onMouseOver={(e) => (e.currentTarget.style.color = linkHoverStyle.color)}
+                                    onMouseOut={(e) => (e.currentTarget.style.color = linkStyle.color)}
+                                >
+                                    {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
+                    <form className="d-flex" style={{ gap: '10px', position: 'relative' }}>
+                        <input
+                            className="form-control"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                            style={{
+                                paddingRight: '35px', 
+                                borderRadius: '25px', 
+                                borderWidth: '1px', 
+                            }}
+                        />
+                        <i
+                            className="fas fa-search"
+                            style={{
+                                position: 'absolute',
+                                right: '15px',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                fontSize: '18px',
+                                color: '#888',
+                            }}
+                        ></i>
+                    </form>
                 </div>
             </div>
         </nav>
-      </div>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;
