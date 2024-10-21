@@ -4,6 +4,7 @@ import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
+import newspandaLogo from './newspandalogo.png'; 
 
 const News = (props) => {
   const [articles, setArticles] = useState([]);
@@ -50,9 +51,17 @@ const News = (props) => {
 
   return (
     <>
+      <div className="text-center">
+        <img
+          src={newspandaLogo}
+          alt="NewsPanda Logo"
+          className="img-fluid"
+          style={{ maxWidth: "500px", height: "auto", marginTop: "50px" }} 
+        />
+      </div>
       <h1
         className="text-center"
-        style={{ margin: "50px 0px", marginTop: "90px" }}
+        style={{ margin: "50px 0px", marginTop: "0px" }}
       >
         NewsPanda-Top {capitalizeFirstLetter(props.category)} Headlines
       </h1>

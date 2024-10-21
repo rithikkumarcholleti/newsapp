@@ -26,4 +26,4 @@ import React from 'react'
   
 }
 
-export default NewsItem
+export default NewsItem;
