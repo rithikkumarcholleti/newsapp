@@ -20,7 +20,7 @@ import React from 'react'
                 <p className="card-text"><small className="text-muted">By {!author?"Unknown": author} on {new Date(date).toGMTString()}</small></p>
                 <a rel="noreferrer" href= {newsUrl} target="_blank" className="btn btn-sm btn-dark">Read more</a>
             </div>
-        </div>
+        </div>  
       </div>
     )
   

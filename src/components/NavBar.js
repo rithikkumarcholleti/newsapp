@@ -4,7 +4,7 @@ import mainlogo from './mainlogo.png';
 
 const NavBar = () => {
     const navStyle = {
-        backgroundColor: '#FF3333', 
+        backgroundColor: '#00A36C', 
     };
 
     const linkStyle = {

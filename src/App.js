@@ -1,24 +1,19 @@
-// src/App.js
 import './App.css';
+
 import React, { useState } from 'react';
 import NavBar from './components/NavBar';
 import News from './components/News';
-import Footer from './components/Footer'; // Import the Footer component
-
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import Footer from './components/Footer'; 
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar';
 
 const App = () => {
   const pageSize = 6;
-  const apiKey = process.env.REACT_APP_NEWS_API;
-  const [progress, setProgress] = useState(0);
+  const apiKey = process.env.REACT_APP_NEWS_API
+  const [progress, setProgress] = useState(0)
 
   return (
-    <div className="d-flex flex-column min-vh-100"> {/* Flexbox for full height */}
+    <div >
       <Router>
         <LoadingBar
           color='#f11946'
