@@ -1,4 +1,4 @@
-# Project Title
+# News App
 
 **Project description.**  
 *A React-based news application that fetches and displays news articles from the News API.*
