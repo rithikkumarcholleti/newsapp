@@ -1,7 +1,7 @@
 # Project Title
 
-**Your project description.**  
-Example: *A React-based news application that fetches and displays news articles from the News API.*
+**Project description.**  
+*A React-based news application that fetches and displays news articles from the News API.*
 
 ---
 
